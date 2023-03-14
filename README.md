@@ -75,3 +75,31 @@ pm2: 5.2.2
 ```
 
 ## Adversary’s Network
+
+## Attack Mock Run Up Screenshots
+- In this scenario, we are forcing victim machine to fetch malicious package hosted by attacker, instead of privately hosted package. In the below image we can see that when machine tries to pull package from NPM public website it gives status code 404 ( Not Found) and 200 (OK) when fetched from internal repository.
+
+![MicrosoftTeams-image (1)](https://user-images.githubusercontent.com/86850255/225090333-164a39e2-faa4-4a91-99a3-f8edc56598be.png)
+
+- Once we identify that package it not hosted on NPM, as an attacker we will try to host malicous package with same name used by victim and publish that on NPM.
+![MicrosoftTeams-image (2)](https://user-images.githubusercontent.com/86850255/225091438-af3c8d3f-fcdc-4de2-8957-f15211b64987.png)
+
+![MicrosoftTeams-image](https://user-images.githubusercontent.com/86850255/225091624-1d9a0682-8c8b-4f1e-9578-5fe1ecabe281.png)
+
+- Once we host our malicious package successfully, and when victim would try to fetch the package again, this time system will fetch from NPM public repository which is hosted by attacker.
+
+![MicrosoftTeams-image](https://user-images.githubusercontent.com/86850255/225093110-5d41f2a5-954d-452e-ac23-0df108f3ed0d.png)
+
+- Once victim fetches the attacker malicous package and install it, the Pre-script command in Package.json file would give us a callback on our DNS server and a successfully agent in Caldera.
+
+![MicrosoftTeams-image install](https://user-images.githubusercontent.com/86850255/225094220-643213d7-0e4b-43ac-a04b-f3f7ab9e96d5.png)
+
+![MicrosoftTeams-image (2)](https://user-images.githubusercontent.com/86850255/225094406-514d629b-ed8b-4a56-8ffc-a101c53e4e9f.png)
+
+![MicrosoftTeams-image (4)](https://user-images.githubusercontent.com/86850255/225094442-25beb18b-0aac-4792-8fd1-2cf9856c9152.png)
+
+
+
+
+
+
